@@ -4,6 +4,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,11 +21,11 @@ public class MainActv extends ActionBarActivity {
 
         this.setTitle(this.getClass().getName());
         
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
-                    .commit();
-        }
+//        if (savedInstanceState == null) {
+//            getSupportFragmentManager().beginTransaction()
+//                    .add(R.id.container, new PlaceholderFragment())
+//                    .commit();
+//        }
     }
 
 
@@ -64,4 +65,23 @@ public class MainActv extends ActionBarActivity {
         }
     }
 
+    protected void onStart() {
+		/*********************************
+		 * 1. Show list
+		 * 
+//		 * 1. Refresh list view;
+		 *********************************/
+//		/*********************************
+//		 * 1. Show list
+//		 *********************************/
+		super.onStart();
+		
+		// Log
+		String msg_Log = "onStart()";
+		Log.d("MainActv.java" + "["
+				+ Thread.currentThread().getStackTrace()[2].getLineNumber()
+				+ "]", msg_Log);
+		
+	}//protected void onStart()
+    
 }
